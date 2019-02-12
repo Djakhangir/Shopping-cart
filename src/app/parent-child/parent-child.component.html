@@ -1,0 +1,85 @@
+
+<body>
+  
+  <!-- <br>
+ <div class="container color-dark">
+  <div class="col">
+    <input type="text" class="txt" name="item" placeholder="Search..." [(ngModel)]="goalText">
+    <p>Type Anything</p>
+    <p>{{ goalText }}</p>
+  </div>
+  <div class="col">
+    <p>Item number ()</p>
+    <input type="button" class="btn" [value]=" btnText " [disabled]="false" (click)="addItem()">
+    <p *ngFor="let goal of goals">
+      {{goal}}
+    </p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <button (click)="submit()" [disabled]="buttondisabled">Click Me</button>
+  </div>
+
+</div> -->
+
+<!-- 
+<p>>Two way binding</p>
+<input type="text" [(ngModel)]="fruitName"/>
+<p>One way binding</p>
+<input type="text" (input)="onInputChange($event)"[value]="fruitName"/>
+{{fruitName}}
+<button class="btn btn-primary" (click)="onAddingFruit()" [disabled]="isButtonDisabled">Add Fruit</button>
+<app-banana *ngIf="showChildComponent"></app-banana> -->
+ 
+
+<div class="row">
+   <div class="col">
+     <h2>Today's Date: {{todaysDate | date:'fullDate'| uppercase}}</h2>
+   </div>
+</div>
+<div class="row">
+  <div class="col-8">
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" 
+            routerLink="./add"
+            routerLinkActive="active">Add Fruit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="routingToTheFruitToEdit"
+            routerLinkActive="active">Edit Fruit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+            routerLink="./favorites"
+            routerLinkActive="active">Favorites</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class="col">
+        <app-add-fruits (fruitMatched)="fruitName = $event">
+        </app-add-fruits>
+      </div>
+      <div class="col" *ngIf="isEditModeEnabaled">
+        <app-edit-fruits [fruitName]="fruitIndexToEdit"></app-edit-fruits>
+      </div> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="col-4 align-self-start">
+    <app-banana ></app-banana>
+  </div>
+</div>
+<!-- <button (click)="fruitName = null">Close app app-banana</button>!-->
+  
+</body>
+
+
+
